@@ -3,8 +3,7 @@ import React, { Component } from 'react';
 //import logo from './logo.svg';
 import './App.css';
 import RoomList from './components/RoomList.js';
-
-//<script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+import MessageList from './components/MessageList.js';
 
 // Initialize Firebase
 var config = {
@@ -18,13 +17,25 @@ var config = {
 firebase.initializeApp(config);
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <RoomList firebase={firebase}/>
-      </div>
-    );
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+            activeRoom: ''
+        };
+    }
+//attempt at method that will be passed to RoomList
+    setActiveRoom(e) {
+        this.setState({ activeRoom: e.target.innerHTML });
+    }
+
+    render() {
+        return (
+            <div className="App">
+                <RoomList firebase={firebase} activeRoom={this.state.activeRoom}/>
+                <MessageList firebase={firebase}/>
+            </div>
+        );
+    }
 }
 
 export default App;

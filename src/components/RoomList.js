@@ -31,12 +31,19 @@ class RoomList extends Component {
             name: newRoom
         });
     }
+//this will log the name of the room that the user clicks if passed to onClick in the render
+    // printClick(e) {
+    //     if (e.target.innerHTML === 'room1') {
+    //         console.log('yes');
+    //     }
+    //     console.log(e.target.innerHTML);
+    // }
 
     render () {
         return (
             <ul>
                 {this.state.rooms.map(room =>
-                    <li key={room.key}>
+                    <li key={room.key} onClick={ (e) => this.props.activeRoom(e) }>
                         {room.name}
                     </li>
                 )}
@@ -45,7 +52,6 @@ class RoomList extends Component {
                     <input type="submit"/>
                 </form>
             </ul>
-
         )
     }
 }

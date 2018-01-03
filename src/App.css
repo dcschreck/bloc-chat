@@ -1,5 +1,9 @@
 .App {
-  text-align: center;
+  text-align: left;
+}
+
+.Active {
+    text-align: center;
 }
 
 .App-logo {
