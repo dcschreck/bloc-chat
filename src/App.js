@@ -23,15 +23,17 @@ class App extends Component {
             activeRoom: ''
         };
     }
-//attempt at method that will be passed to RoomList
+
     setActiveRoom(e) {
+        e.preventDefault();
         this.setState({ activeRoom: e.target.innerHTML });
+        console.log(this.state.activeRoom);
     }
 
     render() {
         return (
             <div className="App">
-                <RoomList firebase={firebase} activeRoom={this.state.activeRoom}/>
+                <RoomList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={(e) => this.setActiveRoom(e)}/>
                 <MessageList firebase={firebase}/>
             </div>
         );
