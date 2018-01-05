@@ -24,16 +24,15 @@ class App extends Component {
         };
     }
 
-    setActiveRoom(e) {
-        e.preventDefault();
-        this.setState({ activeRoom: e.target.innerHTML });
+    setActiveRoom(room) {
+        this.setState({ activeRoom: room });
         console.log(this.state.activeRoom);
     }
 
     render() {
         return (
             <div className="App">
-                <RoomList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={(e) => this.setActiveRoom(e)}/>
+                <RoomList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={(room) => this.setActiveRoom(room)}/>
                 <MessageList firebase={firebase}/>
             </div>
         );
