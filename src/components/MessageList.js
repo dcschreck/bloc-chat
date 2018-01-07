@@ -17,14 +17,17 @@ class MessageList extends Component {
         });
     }
 
+    displayMessages() {
+        const activeMessage = this.props.activeRoom;
+        const filteredMessage = this.state.messages.key.filter(message => message === activeMessage);
+        this.setState({ messages: filteredMessage });
+    }
+
     render () {
         return (
             <ul>
-                {this.state.messages.map(message =>
-                    <li key={message.key}>
-                        {message.username}
-                        {message.content}
-                        {message.sentAt}
+                { this.state.messages.map(message =>
+                    <li key={message.key} onClick={ (activeRoom) => this.displayMessages(activeRoom) }>
                     </li>
                 )}
             </ul>

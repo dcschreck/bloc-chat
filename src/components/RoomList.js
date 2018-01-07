@@ -31,13 +31,6 @@ class RoomList extends Component {
             name: newRoom
         });
     }
-//this will log the name of the room that the user clicks if passed to onClick in the render
-    // printClick(e) {
-    //     if (e.target.innerHTML === 'room1') {
-    //         console.log('yes');
-    //     }
-    //     console.log(e.target.innerHTML);
-    // }
 
     render () {
         return (
