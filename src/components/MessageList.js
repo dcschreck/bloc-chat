@@ -4,7 +4,8 @@ class MessageList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            messages: []
+            messages: [],
+            displayedMessages: []
         };
         this.messagesRef = this.props.firebase.database().ref('messages');
     }
@@ -17,17 +18,21 @@ class MessageList extends Component {
         });
     }
 
-    displayMessages() {
-        const activeMessage = this.props.activeRoom;
-        const filteredMessage = this.state.messages.key.filter(message => message === activeMessage);
-        this.setState({ messages: filteredMessage });
+    displayMessages(activeRoom) {
+        const filteredMessage = this.state.messages.filter(message => message.roomID.toString() === activeRoom);
+        this.setState({ displayedMessages: filteredMessage });
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.displayMessages(nextProps.activeRoom);
     }
 
     render () {
         return (
             <ul>
-                { this.state.messages.map(message =>
-                    <li key={message.key} onClick={ (activeRoom) => this.displayMessages(activeRoom) }>
+                { this.state.displayedMessages.map(message =>
+                    <li key={message.key}>
+                        {message.content}
                     </li>
                 )}
             </ul>
