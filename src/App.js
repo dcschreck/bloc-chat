@@ -32,7 +32,7 @@ class App extends Component {
     }
 
     setUser(user) {
-        //console.log(user);
+        //console.log(user.displayName);
         this.setState({ userInfo: user });
     }
 
@@ -41,7 +41,7 @@ class App extends Component {
             <div className="App">
                 <RoomList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={(room) => this.setActiveRoom(room)}/>
                 <MessageList firebase={firebase} activeRoom={this.state.activeRoom}/>
-                <User firebase={firebase} setUser={(user) => this.setUser(user)}/>
+                <User firebase={firebase} userInfo={this.state.userInfo} setUser={(user) => this.setUser(user)}/>
             </div>
         );
     }
