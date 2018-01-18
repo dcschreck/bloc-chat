@@ -5,6 +5,7 @@ import './App.css';
 import RoomList from './components/RoomList.js';
 import MessageList from './components/MessageList.js';
 import User from './components/User.js';
+import SendMessages from './components/SendMessages.js';
 
 // Initialize Firebase
 var config = {
@@ -42,6 +43,7 @@ class App extends Component {
                 <RoomList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={(room) => this.setActiveRoom(room)}/>
                 <MessageList firebase={firebase} activeRoom={this.state.activeRoom}/>
                 <User firebase={firebase} userInfo={this.state.userInfo} setUser={(user) => this.setUser(user)}/>
+                <SendMessages firebase={firebase} userInfo={this.state.userInfo} setUser={(user) => this.setUser(user)} activeRoom={this.state.activeRoom}/>
             </div>
         );
     }
