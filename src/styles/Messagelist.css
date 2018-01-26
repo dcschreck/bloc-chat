@@ -1,0 +1,24 @@
+.messageblock {
+    margin: 10px;
+    border: 2px solid black;
+    padding: 19px 5px 0px 5px;
+}
+
+.username {
+    font-size: 15px;
+    color: blue;
+}
+
+.content {
+    font-size: 25px;
+}
+
+.time {
+    position: relative;
+    left: 1050px;
+    bottom: 18px;
+}
+
+.newmessage {
+    margin-left: 10px;
+}

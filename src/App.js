@@ -5,7 +5,6 @@ import './App.css';
 import RoomList from './components/RoomList.js';
 import MessageList from './components/MessageList.js';
 import User from './components/User.js';
-import SendMessages from './components/SendMessages.js';
 
 // Initialize Firebase
 var config = {
@@ -39,12 +38,28 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App">
-                <RoomList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={(room) => this.setActiveRoom(room)}/>
-                <MessageList firebase={firebase} activeRoom={this.state.activeRoom}/>
-                <User firebase={firebase} userInfo={this.state.userInfo} setUser={(user) => this.setUser(user)}/>
-                <SendMessages firebase={firebase} userInfo={this.state.userInfo} setUser={(user) => this.setUser(user)} activeRoom={this.state.activeRoom}/>
-            </div>
+            <main>
+                <section>
+                    <div className="title">
+                        <h1>Bloc Chat</h1>
+                    </div>
+                    <div className="signin">
+                        <User firebase={firebase} userInfo={this.state.userInfo} setUser={(user) => this.setUser(user)}/>
+                    </div>
+                </section>
+
+                <section className="list">
+                    <h3>Rooms</h3>
+                    <div>
+                        <RoomList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={(room) => this.setActiveRoom(room)}/>
+                    </div>
+                </section>
+
+                <section className="messages">
+                    <MessageList firebase={firebase} activeRoom={this.state.activeRoom} userInfo={this.state.userInfo} setUser={(user) => this.setUser(user)}/>
+                </section>
+            </main>
+
         );
     }
 }
