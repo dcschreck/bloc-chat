@@ -5,6 +5,10 @@
     font-size: 30px;
 }
 
+.title .signIn {
+    cursor: pointer;
+}
+
 .signin {
     position: absolute;
     top: 45px;
@@ -17,6 +21,11 @@
     width: 180px;
     height: 800px;
     background-color: #99ffcc;
+    cursor: default;
+}
+
+.list .rooms {
+    cursor: pointer;
 }
 
 .messages {

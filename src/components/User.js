@@ -16,8 +16,8 @@ class User extends Component {
     render () {
         return (
             <main className="title">
-                <button onClick={this.signIn}>Sign In</button>
-                <button onClick={() => this.props.firebase.auth().signOut()}>Sign Out</button>
+                <button className="signIn" onClick={this.signIn}>Sign In</button>
+                <button className="signIn" onClick={() => this.props.firebase.auth().signOut()}>Sign Out</button>
                 {this.props.userInfo ? this.props.userInfo.displayName : "Guest"}
             </main>
         )
