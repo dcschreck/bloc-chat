@@ -41,7 +41,7 @@ class App extends Component {
             <main>
                 <section>
                     <div className="title">
-                        <h1>Bloc Chat</h1>
+                        <h1>ChattyApp</h1>
                     </div>
                     <div className="signin">
                         <User firebase={firebase} userInfo={this.state.userInfo} setUser={(user) => this.setUser(user)}/>
