@@ -9,7 +9,7 @@ ChattyApp is a fully responsive web app that allows you to chat with friends all
 
 **Mobile View**
 
-<img src="img/mobile-view.png">
+<img src="img/mobile-view.png" width="300">
 
 ## Technical
 
