@@ -1,39 +1,66 @@
-.title {
-    padding: 5px;
-    background-color: gray;
-    color: blue;
-    font-size: 30px;
+.wrapper {
+    display: grid;
+	font-family: Arial, sans-serif;
+	grid-template-columns: auto;
+	grid-template-rows: auto;
+	grid-template-areas:
+	"header"
+	"sidebar"
+	"article";
 }
 
-.title .signIn {
+.wrapper > * {
+	padding: 1em;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+header {
+	background: #236AB9;
+	grid-area: header;
+    color: #e7f3ef;
+}
+aside {
+	background: #D4E4F7;
+	grid-area: sidebar;
+    color: #190934;
+}
+article {
+	grid-area: article;
+    background: #D4E4F7;
+    color: #190934;
+    border-left: none;
+    border-top: 2px solid #236AB9;
+}
+.roomlist {
     cursor: pointer;
 }
 
-.signin {
-    position: absolute;
-    top: 45px;
-    right: 0px;
+@media (min-width: 650px) {
+	.wrapper {
+		grid-template-columns: 1fr 3fr;
+		grid-template-rows: auto;
+		grid-template-areas:
+        "header header header header"
+		"sidebar article article article";
+	}
+    article {
+        border-top: none;
+        border-left: 2px solid #236AB9;
+    }
 }
 
-.list {
-    padding: 10px;
-    color: green;
-    width: 180px;
-    height: 800px;
-    background-color: #99ffcc;
-    cursor: default;
-}
-
-.list .rooms {
-    cursor: pointer;
-}
-
-.messages {
-    position: absolute;
-    background-color: #e6e6e6;
-    left: 200px;
-    top: 137px;
-    width: 1230px;
-    height: 800px;
-    padding: 7px;
+@media (min-width: 1000px) {
+	.wrapper {
+		grid-template-areas:
+		"header header header header"
+		"sidebar article article article";
+	}
+    article {
+        border-top: none;
+        border-left: 2px solid #236AB9;
+    }
 }

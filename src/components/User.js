@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../styles/User.css';
 
 class User extends Component {
 
@@ -15,10 +16,10 @@ class User extends Component {
 
     render () {
         return (
-            <main className="title">
-                <button className="signIn" onClick={this.signIn}>Sign In</button>
-                <button className="signIn" onClick={() => this.props.firebase.auth().signOut()}>Sign Out</button>
+            <main class="signin">
                 {this.props.userInfo ? this.props.userInfo.displayName : "Guest"}
+                <button onClick={this.signIn}>Sign In</button>
+                <button onClick={() => this.props.firebase.auth().signOut()}>Sign Out</button>
             </main>
         )
     }

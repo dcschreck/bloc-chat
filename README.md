@@ -1,9 +1,14 @@
-## ChattyApp
+# ChattyApp
 
-**About**
+ChattyApp is a fully responsive web app that allows you to chat with friends all the time! Sign up with your Gmail account and create new Chat rooms for topic based discussions or just chat about whatever is on your mind!
 
-ChattyApp is a chat app that allows you to chat with friends all the time! Create new Chat rooms for topic based discussions or just chat about anything and everything!
+## Screenshots
+**Desktop/Tablet View**
+<img src="img/desktop-tablet-view.png">
 
-**Specs**
+**Mobile View**
+<img src="img/mobile-view.png">
 
-ChattyApp is built with JavaScript (React) on the front-end and uses Google's Firebase database services on the back-end. Sign-up with your Gmail or chat as a guest. Create new chat rooms or select one created by another user.
+## Technical
+
+ChattyApp is built with JavaScript (React), HTML, and CSS (Grid) on the front-end. The backend utilizes Firebase for its database and authentication services.

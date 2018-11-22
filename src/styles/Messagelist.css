@@ -1,12 +1,12 @@
 .messageblock {
     margin: 10px;
-    border: 2px solid black;
-    padding: 19px 5px 0px 5px;
+    /* border: 2px solid black; */
+    padding: 5px;
 }
 
 .username {
     font-size: 15px;
-    color: blue;
+    color: #5A18C9;
 }
 
 .content {
@@ -15,8 +15,7 @@
 
 .time {
     position: relative;
-    left: 1050px;
-    bottom: 18px;
+    color: #190934;
 }
 
 .newmessage {

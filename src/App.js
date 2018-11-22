@@ -27,37 +27,31 @@ class App extends Component {
     }
 
     setActiveRoom(room) {
-        //console.log(room);
         this.setState({ activeRoom: room });
     }
 
     setUser(user) {
-        //console.log(user.displayName);
         this.setState({ userInfo: user });
     }
 
     render() {
         return (
-            <main>
-                <section>
-                    <div className="title">
-                        <h1>ChattyApp</h1>
-                    </div>
-                    <div className="signin">
-                        <User firebase={firebase} userInfo={this.state.userInfo} setUser={(user) => this.setUser(user)}/>
-                    </div>
-                </section>
+            <main className="wrapper">
+                <header class="header">
+                    <h1>ChattyApp</h1>
+                    <User firebase={firebase} userInfo={this.state.userInfo} setUser={(user) => this.setUser(user)}/>
+                </header>
 
-                <section className="list">
+                <aside>
                     <h3>Rooms</h3>
-                    <div>
+                    <div className="roomlist">
                         <RoomList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={(room) => this.setActiveRoom(room)}/>
                     </div>
-                </section>
+                </aside>
 
-                <section className="messages">
+                <article>
                     <MessageList firebase={firebase} activeRoom={this.state.activeRoom} userInfo={this.state.userInfo} setUser={(user) => this.setUser(user)}/>
-                </section>
+                </article>
             </main>
 
         );
