@@ -64,7 +64,7 @@ class MessageList extends Component {
                     </div>
                 )}
                 <form className="newmessage" onSubmit={ (e) => this.createMessage(e) }>
-                    <input type="text" value={ this.state.newMessageContent} onChange={ (e) => this.handleChange(e)} />
+                    <input type="text" placeholder="New Message" value={ this.state.newMessageContent} onChange={ (e) => this.handleChange(e)} />
                     <input type="submit" />
                 </form>
             </div>
